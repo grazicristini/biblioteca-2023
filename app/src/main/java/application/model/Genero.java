@@ -14,7 +14,7 @@ public class Genero {
     private int id;
     private String nome;
 
-        public int getId() {
+    public int getId() {
         return id;
     }
     public void setId(int id) {
