@@ -3,16 +3,17 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Novo Gênero</title>
+    <title>Editar Gênero</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Novo Gênero</h1>
-        <form action="/genero/insert" method="post">
+        <h1>Editar Gênero</h1>
+        <form action="/genero/update" method="post">
+            <input type="hidden" name="id" value="${genero.id}" />
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" class="form-control" />
+                <input type="text" name="nome" class="form-control" value="${genero.nome}" />
             </div>
             <br />
             <a href="/genero/list" class="btn btn-primary"> Voltar</a>

@@ -4,8 +4,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Gênero</title>
-    <link rel="stylesheet" href="/css/bootstrap.min">
+    <title>Gêneros</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
