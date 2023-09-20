@@ -31,7 +31,7 @@ public class GeneroController {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public String insert (@RequestParam("nome") String nome) {
+    public String insert(@RequestParam("nome") String nome) {
         Genero genero = new Genero();
         genero.setNome(nome);
 
