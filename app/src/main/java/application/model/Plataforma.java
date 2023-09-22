@@ -7,12 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "generos")
-public class Genero {
+@Table(name = "plataformas")
+public class Plataforma {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String nome;
+    private String fornecedor;
+
 
     public int getId() {
         return id;
@@ -25,5 +27,11 @@ public class Genero {
     }
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    public String getFornecedor() {
+        return fornecedor;
+    }
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
     }
 }

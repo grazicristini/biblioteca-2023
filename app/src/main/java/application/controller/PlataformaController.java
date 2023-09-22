@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import application.model.Genero;
-import application.model.GeneroRepository;
+import application.model.Plataforma;
+import application.model.PlataformaRepository;
 
 
 @Controller
-@RequestMapping("/genero")
-public class GeneroController {
+@RequestMapping("/plataforma")
+public class PlataformaController {
     @Autowired
-    private GeneroRepository generoRepo;
+    private PlataformaRepository plataformaRepo;
 
     @RequestMapping("/list")
     public String list(Model model) {
-        model.addAttribute("generos", generoRepo.findAll());
+        model.addAttribute("plataformas", plataformaRepo.findAll());
         return "/genero/list";
     }
 
@@ -32,23 +32,23 @@ public class GeneroController {
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(@RequestParam("nome") String nome) {
-        Genero genero = new Genero();
-        genero.setNome(nome);
+        Plataforma plataforma = new Plataforma();
+        plataforma.setNome(nome);
 
-        generoRepo.save(genero);
+        plataformaRepo.save(plataforma);
 
-        return "redirect:/genero/list";
+        return "redirect:/plataforma/list";
     }
 
     @RequestMapping("/update")
     public String update(Model model, @RequestParam("id") int id) {
-        Optional<Genero> genero = generoRepo.findById(id);
+        Optional<Plataforma> plataforma = plataformaRepo.findById(id);
 
-        if(genero.isPresent()) {
-            model.addAttribute("generos", genero.get());
-            return "/genero/update";
+        if(plataforma.isPresent()) {
+            model.addAttribute("plataformas", plataforma.get());
+            return "/plataforma/update";
         }
 
-        return "redirect:/genero/list";
+        return "redirect:/plataforma/list";
     }
 }
